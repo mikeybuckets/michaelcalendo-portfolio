@@ -6,11 +6,8 @@ import {
     SearchIcon
 } from "@heroicons/react/solid";
 import { useState } from "react";
-import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/default.css";
-import { DateRangePicker } from "react-date-range";
 
-function Header() {
+export default function Header() {
     const [searchInput, setSearchInput] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -80,5 +77,3 @@ function Header() {
         </header>
     );
 }
-
-export default Header;
