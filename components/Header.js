@@ -15,15 +15,15 @@ function Header() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
-    const handleSelect = (ranges) => {
-        setStartDate(ranges.selectionRange.startDate);
+    function handleSelect(ranges) {
+        setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
-    };
+    }
 
-    const selectionRange = {
-        startDate: startDate,
-        endDate: endDate,
-        key: 'Selection'
+    function selectionRange() {
+        startDate={startDate},
+        endDate={endDate},
+        key={Selection}
     }
 
     return (
@@ -62,14 +62,19 @@ function Header() {
 
                 <div className="flex items-center
                 space-x-2 border-2 p-2 rounded-full">
-                    <MenuIcon className="h-6 cursor-pointer" />
-                    <UserCircleIcon className="h-6 cursor-pointer" />
+                    <MenuIcon className="h-6" />
+                    <UserCircleIcon className="h-6" />
                 </div> 
             </div>
 
             {searchInput && (
                 <div>
-                    <DateRangePicker ranges={[selectionRange]} />
+                    <DateRangePicker 
+                        ranges={[selectionRange]} 
+                        minDate={new Date()}
+                        rangeColor={["#FD5B61"]}  
+                        onChange={handleSelect} 
+                    />
                 </div>
             )}
         </header>
