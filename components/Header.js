@@ -15,6 +15,11 @@ function Header() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
+    const handleSelect = (ranges) => {
+        setStartDate(ranges.selectionRange.startDate);
+        setEndDate(ranges.selection.endDate);
+    };
+
     const selectionRange = {
         startDate: startDate,
         endDate: endDate,
