@@ -2,26 +2,29 @@ import Image from "next/image";
 import { 
     GlobeAltIcon, 
     MenuIcon, 
-    UserCircleIcon, 
-    SearchIcon
+    UserCircleIcon,
+    SearchIcon,
 } from "@heroicons/react/solid";
 import { useState } from "react";
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { DateRangePicker } from 'react-date-range';
 
-export default function Header() {
+function Header() {
     const [searchInput, setSearchInput] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
 
-    function handleSelect(ranges) {
+    const handleSelect = (ranges) => {
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
-    }
+    };
 
-    function selectionRange() {
-        startDate={startDate},
-        endDate={endDate},
-        key={Selection}
-    }
+    const selectionRange = {
+        startDate: startDate,
+        endDate: endDate,
+        key: "selection",
+    };
 
     return (
         <header className="sticky top-0 z-50 grid
@@ -42,7 +45,7 @@ export default function Header() {
             md:shadow-sm">
                 <input 
                     value={searchInput}
-                    onChange={(e) => setSearchInput.apply(e.target.value)}
+                    onChange={(e) => setSearchInput(e.target.value)}
                     className="flex-grow pl-5 bg-transparent outline-none text-sm
                     text-gray-600 placeholder-gray-400"
                     type="text" 
@@ -59,21 +62,23 @@ export default function Header() {
 
                 <div className="flex items-center
                 space-x-2 border-2 p-2 rounded-full">
-                    <MenuIcon className="h-6" />
-                    <UserCircleIcon className="h-6" />
+                    <MenuIcon className="h-6 cursor-pointer" />
+                    <UserCircleIcon className="h-6 cursor-pointer" />
                 </div> 
             </div>
 
             {searchInput && (
                 <div>
-                    <DateRangePicker 
-                        ranges={[selectionRange]} 
-                        minDate={new Date()}
-                        rangeColor={["#FD5B61"]}  
-                        onChange={handleSelect} 
+                    <DateRangePicker
+                        ranges={[selectionRange]}
+                        minDates={new Date()}
+                        rangeColors={["#FD5B61"]}
+                        onChange={handleSelect}
                     />
                 </div>
             )}
         </header>
     );
 }
+
+export default Header;
