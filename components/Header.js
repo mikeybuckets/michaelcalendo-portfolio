@@ -3,6 +3,7 @@ import {
     GlobeAltIcon, 
     MenuIcon, 
     UserCircleIcon,
+    UsersIcon,
     SearchIcon,
 } from "@heroicons/react/solid";
 import { useState } from "react";
@@ -14,9 +15,10 @@ function Header() {
     const [searchInput, setSearchInput] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const [noOfGuests, setNoOfGuests] = useState(1);
 
     const handleSelect = (ranges) => {
-        setStartDate(ranges.selection.startDate);
+        setStartDate(ranges.selection .startDate);
         setEndDate(ranges.selection.endDate);
     };
 
@@ -60,21 +62,33 @@ function Header() {
                 <p className="hidden md:inline cursor-pointer">Become a host</p>
                 <GlobeAltIcon className="h-6 cursor-pointer" />
 
-                <div className="flex items-center
-                space-x-2 border-2 p-2 rounded-full">
-                    <MenuIcon className="h-6 cursor-pointer" />
-                    <UserCircleIcon className="h-6 cursor-pointer" />
+                <div className="flex items-center space-x-2 border-2 p-2 rounded-full">
+                    <MenuIcon className="h-6" />
+                    <UserCircleIcon className="h-6" />
                 </div> 
             </div>
 
             {searchInput && (
-                <div>
+                <div className="flex flex-col col-span-3 mx-auto">
                     <DateRangePicker
                         ranges={[selectionRange]}
-                        minDates={new Date()}
+                        minDate={new Date()}
                         rangeColors={["#FD5B61"]}
                         onChange={handleSelect}
                     />
+                    <div classname="flex items-center border-b mb-4">
+                        <h2 className="text-2xl flex-grow font-semibold">
+                            Number of Guests
+                        </h2>
+
+                        <UsersIcon className="h-5" />
+                        <input
+                            value={noOfGuests}
+                            onChange={(e) => setNoOfGuests(e.target.value)}
+                            type="number"
+                            className="w-12 pl-2 text-lg outline-none text-red-400"
+                        />
+                    </div>
                 </div>
             )}
         </header>
