@@ -76,18 +76,10 @@ function Header() {
                         rangeColors={["#FD5B61"]}
                         onChange={handleSelect}
                     />
-                    <div classname="flex items-center border-b mb-4">
-                        <h2 className="text-2xl flex-grow font-semibold">
+                    <div>
+                        <h2 classname="text-2xl flex-grow font-semibold">
                             Number of Guests
                         </h2>
-
-                        <UsersIcon className="h-5" />
-                        <input
-                            value={noOfGuests}
-                            onChange={(e) => setNoOfGuests(e.target.value)}
-                            type="number"
-                            className="w-12 pl-2 text-lg outline-none text-red-400"
-                        />
                     </div>
                 </div>
             )}
