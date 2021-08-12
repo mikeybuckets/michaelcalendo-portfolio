@@ -13,7 +13,8 @@ function Search() {
 
                     <h1 className="text-3xl font-semibold-lg mt-2 mb-6">Stays in Mars</h1>
 
-                    <div className="">
+                    <div className="hidden lg:inline-flex mb-5 space-x-3
+                    text-gray-800 whitespace-nowrap">
                         <p className="button">Cancellation Flexibility</p>
                         <p className="button">Type of Place</p>
                         <p className="button">Price</p>
