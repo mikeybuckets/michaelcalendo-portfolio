@@ -24,6 +24,14 @@ function Header() {
         setEndDate(ranges.selection.endDate);
     };
 
+    const resetInput = () => {
+        setSearchInput("");
+    };
+
+    const search = () => {
+        router.push("/search");
+    }
+
     const selectionRange = {
         startDate: startDate,
         endDate: endDate,
@@ -85,6 +93,23 @@ function Header() {
                         <h2 classname="text-2xl flex-grow font-semibold">
                             Number of Guests
                         </h2>
+
+                        <UsersIcon className="h-5" />
+                        <input
+                            value={noOfGuests}
+                            onChange={(e) => setNoOfGuests(e.target.value)}
+                            type="number"
+                            min={1}
+                            className="w-12 pl-2 text-lg outline-none text-red-400"
+                        />
+                    </div>
+                    <div className="flex">
+                        <button onClick={resetInput} className="flex-grow text-gray-500">
+                            Cancel
+                        </button>
+                        <button 
+                            onClick={search}
+                            className="flex-grow text-red-400">Search</button>
                     </div>
                 </div>
             )}
