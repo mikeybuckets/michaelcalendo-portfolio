@@ -1,8 +1,11 @@
 import { useRouter } from "next/dist/client/router";
 import Footer from "../components/Footer";
-import InfoCard from "../components/InfoCard";
 import Header from "../components/Header";
 import { format } from "date-fns";
+import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
+
+// need to add location in by default to search  (in my app)
 
 function Search({ searchResults }) {
     const router = useRouter();
@@ -55,6 +58,10 @@ function Search({ searchResults }) {
                 </div>
                 
                 </section> 
+
+                <section className="hidden hidden:inline-flex">
+                    <Map />
+                </section>
             </main>
 
             <Footer />
