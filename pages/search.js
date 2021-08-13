@@ -36,6 +36,7 @@ function Search({ searchResults }) {
                         <p className="button">More filters</p>
                     </div>
 
+                <div className="flex flex-col">
                     {searchResults.map(
                         ({  img, location, title, description, star, price, total }
                         ) => (
@@ -49,7 +50,10 @@ function Search({ searchResults }) {
                                 price={price}
                                 total={total}
                             />
-                    ))}
+                        )
+                    )}
+                </div>
+                
                 </section> 
             </main>
 
