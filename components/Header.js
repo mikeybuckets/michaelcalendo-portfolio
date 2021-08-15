@@ -55,12 +55,19 @@ function Header() {
                 cursor-pointer my-auto"
             >
                  {/* Left */}
-                <Image 
+            <Image 
                 src="https://links.papareact.com/qd3" 
                 layout="fill"
                 objectFit="contain"
                 objectPosition="left"
             />
+            {/* <Image
+                src="https://divoperations.com/resources/wedding-images/logos/header-heart-img.png" 
+                objectFit="contain"
+                objectPosition="left"
+                width="100%"
+                height="100%"
+            /> */}
             </div>
 
             {/* Middle */}
