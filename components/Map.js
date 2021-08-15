@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import getCenter from "geolib/es/getCenter";
+import Image from "next/image";
 
 function Map({ searchResults }) {
     const [selectedLocation, setSelectedLocation] = useState({});
@@ -39,7 +40,14 @@ function Map({ searchResults }) {
                             onCLick={() => setSelectedLocation(result)}
                             className="cursor-pointer text-2xl animate-bounce"
                         >
-                            🎃
+                            <Image
+                                src="https://divoperations.com/resources/wedding-images/logos/full-leaf.svg" 
+                                objectFit="auto"
+                                objectPosition="left"
+                                width="100%"
+                                height="100%"
+                            />
+                                
                         </p>
                     </Marker>
                 </div>
