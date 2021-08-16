@@ -46,11 +46,11 @@ export default function Home({ exploreData, cardsData }) {
           </div>
         </section>
 
-        {/* <LargeCard
+        <LargeCard
           img="https://links.papareact.com/4cj"
           title="The Greatest Outdoors"
           description="This date happened early on."buttonText="Get Inspired"
-        /> */}
+        />
       </main>
 
       <Footer />

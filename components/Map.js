@@ -37,17 +37,12 @@ function Map({ searchResults }) {
                         offsetRight={-10}
                     >
                         <p
+                            role="img"
                             onCLick={() => setSelectedLocation(result)}
                             className="cursor-pointer text-2xl animate-bounce"
+                            aria-label="push-pin"
                         >
-                            <Image
-                                src="https://divoperations.com/resources/wedding-images/logos/full-leaf.svg" 
-                                objectFit="auto"
-                                objectPosition="left"
-                                width="100%"
-                                height="100%"
-                            />
-                                
+                            📌       
                         </p>
                     </Marker>
                 </div>

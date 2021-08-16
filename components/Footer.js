@@ -23,19 +23,19 @@ function Footer() {
             <div className="space-y-4 text-xs text-gray-800">
             <h5 className="font-bold">LOCATION</h5>
                 <p>Mesa</p>
-                <p>October 22, 2022</p>
-                <p>Stonebridge</p>
+                <p>October 2022</p>
+                <p>Wedding Day</p>
                 <p>Book a room</p>
                 <p>See locations</p>
             </div>
 
             <div className="space-y-4 text-xs text-gray-800">
             <h5 className="font-bold">CONTACT</h5>
-                <p>Mesa</p>
-                <p>October 22, 2022</p>
-                <p>Stonebridge</p>
-                <p>Book a room</p>
-                <p>See locations</p>
+                <p>Currently</p>
+                <p>Living in</p>
+                <p>Queen Creek</p>
+                <p>Arizona</p>
+                <p>Looking for a job!</p>
             </div>
         </div>        
     );
