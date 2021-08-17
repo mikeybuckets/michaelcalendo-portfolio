@@ -1,0 +1,24 @@
+> next build
+info  - Creating an optimized production build
+info  - Compiled successfully
+info  - Collecting page data  
+info  - Generating static pages (3/3)
+info  - Finalizing page optimization  
+
+Page                              Size     First Load JS
+┌ ● /                             2.4 kB           99 kB
+├   /_app                         0 B            64.6 kB
+├ ○ /404                          3.17 kB        67.8 kB
+├ λ /api/hello                    0 B            64.6 kB
+└ λ /search                       267 kB          363 kB
++ First Load JS shared by all     64.6 kB
+  ├ chunks/framework.0441fa.js    42.4 kB
+  ├ chunks/main.c03421.js         20.2 kB
+  ├ chunks/pages/_app.67a8fb.js   1.2 kB
+  ├ chunks/webpack.6aa242.js      812 B
+  └ css/0cb355de33087ba70c8f.css  3.2 kB
+
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
+   (ISR)     incremental static regeneration (uses revalidate in getStaticProps)
