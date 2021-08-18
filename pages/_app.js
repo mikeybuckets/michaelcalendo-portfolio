@@ -1,6 +1,7 @@
 import "tailwindcss/tailwind.css";
 import "../styles/global.css";
 import Router from  "next/router";
+import { Helmet } from 'react-helmet';
 
 import ProgressBar from "@badrap/bar-of-progress";
 
@@ -19,4 +20,14 @@ function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default MyApp;
+export default function App() {
+  return (
+    <div className="App">
+      <Helmet>
+        <title>App Title</title>
+        <meta name="description" content="App Description" />
+        <meta name="theme-color" content="#008f68" />
+      </Helmet>
+    </div>
+  );
+}
